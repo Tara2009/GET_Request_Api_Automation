@@ -7,4 +7,4 @@ ${url}        https://jsonplaceholder.typicode.com
 *** Test Cases ***
 Get Request Data
     Create Session      mysession    ${url}
-    ${response}=        get
+    ${resp}=            get Request    mysession    /posts/1
