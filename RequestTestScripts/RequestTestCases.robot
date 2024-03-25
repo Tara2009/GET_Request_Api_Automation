@@ -32,3 +32,4 @@ Get Google Request Data
     ${resp_google}=        Get On Session    google    /    expected_status=200
     Log                    ${resp_google}
     Should Be Equal As Strings               ${resp_google.reason}        OK
+    Should Be Equal As Strings               ${resp_google.status}        200
