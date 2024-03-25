@@ -12,10 +12,10 @@ ${jurl}                         https://jsonplaceholder.typicode.com            
 Get Request Data
     # ${resp}=                  get Request                 mysession                   /posts/1
     #${status_Code}             ${resp.json()}[status]      asd
-    #${resp}=                   GET                         ${jurl}                     #This one also working
+   # ${resp}=                    GET                         ${jurl}                     #This one also working
     #${resp}=                   Get On Session              jsonplaceholder             /posts/1
-    Create Session              mysession                   ${jurl}
-    ${resp}=                    Get On Session              ${jurl}                     /posts/1
+   # Create Session              mysession                   ${jurl}
+    ${resp}=                    Get On Session              jsonplaceholder                     /posts/1
    # Should Be Equal As Strings                              ${resp.json()}.[status]     ok
     Log                         ${resp}
     Log                         ${resp.json()}.title
