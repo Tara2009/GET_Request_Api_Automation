@@ -1,7 +1,8 @@
 *** Settings ***
 Library        RequestsLibrary
 Library        Collections
-Library        JSONLibrary
+
+Suite Setup    Create Session  jsonplaceholder  https://jsonplaceholder.typicode.com
 
 *** Variables ***
 #${url}        https://jsonplaceholder.typicode.com
@@ -14,7 +15,7 @@ Get Request Data
    ${resp}=             GET   ${jurl}   
    #${status_Code}       ${resp.json()}[status]     asd
    Log                  ${resp}     
-   Log                  ${resp.json()}[status]    
+   Log                  ${resp.json()}.status    
    Log                  ${resp}.reason
    Log                  ${resp}.content
    Log                  ${resp}.headers         
