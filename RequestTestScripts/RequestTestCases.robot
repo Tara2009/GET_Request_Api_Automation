@@ -62,4 +62,4 @@ Put Requestex
 Delete Request
     [Documentation]           Delete Request from the Placeholder web site
     [Tags]                    DelReq
-    ${delreq}=                Delete On Session            jsonplaceholder        /posts/100        expected_status=204
+    ${delreq}=                Delete On Session            https://jsonplaceholder.typicode.com      /posts/100           expected_status=204
