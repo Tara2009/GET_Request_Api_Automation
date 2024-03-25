@@ -42,7 +42,7 @@ Get Google Request Data
 Post Request
     [Documentation]             Post Request from the Placeholder web Suite
     [Tags]                      PostReq
-    &(data)=                    Create Dictionary           title=Robotframework requests                           body=This is test!     UserId=2
+    &{data}=                    Create Dictionary           title=Robotframework requests                           body=This is test!     UserId=2
     ${postresp}=                Post On Session             jsonplaceholder             /posts                      json=${data}           expected_status=anything
     Status Should Be            201                         ${postresp}
     Dictionary Should Contain Key                           ${postresp.json()}          id
