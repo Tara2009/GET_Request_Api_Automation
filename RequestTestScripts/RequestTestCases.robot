@@ -48,7 +48,7 @@ Post Request
     Status Should Be            201                         ${postresp}
     Dictionary Should Contain Key                           ${postresp.json()}          id
 
-Put Request
+Put Requestex
     [Documentation]             Put Request from the Placeholder web Suite
     [Tags]                      putReq
     &{data}=                    Create Dictionary           title=update the request through copado
@@ -58,3 +58,8 @@ Put Request
     Dictionary Should Contain Key                           ${putresp.json()}           title
     ${titleval}=                Get From Dictionary         ${putresp.json()}           title
     Should Be Equal As Strings                              ${updated_expected}         ${titleval}
+
+Delete Request
+    [Documentation]           Delete Request from the Placeholder web site
+    [Tags]                    DelReq
+    ${delreq}=                Delete On Session            jsonplaceholder        /posts/100        expected_status=204
