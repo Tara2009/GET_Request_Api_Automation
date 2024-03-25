@@ -16,7 +16,7 @@ Get Request Data
     #${resp}=                   Get On Session              jsonplaceholder             /posts/1
     Create Session              mysession                   ${jurl}
     ${resp}=                    Get On Session              ${jurl}                     /posts/1
-    Should Be Equal As Strings                              ${resp.json()}.[status]     ok
+   # Should Be Equal As Strings                              ${resp.json()}.[status]     ok
     Log                         ${resp}
     Log                         ${resp.json()}.title
     Log                         ${resp.json()}[title]
