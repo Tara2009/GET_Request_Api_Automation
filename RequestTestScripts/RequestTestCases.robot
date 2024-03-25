@@ -24,3 +24,11 @@ Get Request Data
     Log                         ${resp}.content
     Log                         ${resp}.headers
     #${response.json()}[id]
+
+Get Google Request Data
+    [Documentation]        Fetch data from google using get request
+    [Tags]                 ReqGoogle
+    Create Session         google        http://www.google.com
+    ${resp_google}=        Get On Session    google    /    expected_status=200
+    Log                    ${resp_google}
+    Should Be Equal As Strings               ${resp_google.reason}        OK
