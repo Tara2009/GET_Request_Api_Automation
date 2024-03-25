@@ -12,11 +12,11 @@ ${jurl}                         https://jsonplaceholder.typicode.com            
 Get Request Data
     # ${resp}=                  get Request                 mysession                   /posts/1
     #${status_Code}             ${resp.json()}[status]      asd
-   # ${resp}=                    GET                         ${jurl}                     #This one also working
+    # ${resp}=                  GET                         ${jurl}                     #This one also working
     #${resp}=                   Get On Session              jsonplaceholder             /posts/1
-   # Create Session              mysession                   ${jurl}
-    ${resp}=                    Get On Session              jsonplaceholder                     /posts/1
-   # Should Be Equal As Strings                              ${resp.json()}.[status]     ok
+    # Create Session            mysession                   ${jurl}
+    ${resp}=                    Get On Session              jsonplaceholder             /posts/1
+    # Should Be Equal As Strings                            ${resp.json()}.[status]     ok
     Log                         ${resp}
     Log                         ${resp.json()}.title
     Log                         ${resp.json()}[title]
@@ -26,10 +26,10 @@ Get Request Data
     #${response.json()}[id]
 
 Get Google Request Data
-    [Documentation]        Fetch data from google using get request
-    [Tags]                 ReqGoogle
-    Create Session         google        http://www.google.com
-    ${resp_google}=        Get On Session    google    /    expected_status=200
-    Log                    ${resp_google}
-    Should Be Equal As Strings               ${resp_google.reason}        OK
-    Should Be Equal As Integers               ${resp_google.status}        200
+    [Documentation]             Fetch data from google using get request
+    [Tags]                      ReqGoogle
+    Create Session              google                      http://www.google.com
+    ${resp_google}=             Get On Session              google                      /                           expected_status=200
+    Log                         ${resp_google}
+    Should Be Equal As Strings                              ${resp_google.reason}       OK
+    Should Be Equal As Integers                             ${resp_google.status}       200
