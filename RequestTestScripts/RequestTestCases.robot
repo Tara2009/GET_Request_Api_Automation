@@ -10,6 +10,8 @@ ${jurl}                         https://jsonplaceholder.typicode.com            
 
 *** Test Cases ***
 Get Request Data
+    [Documentation]             Get the Data from the jsonplaceholder website
+    [Tags]                      Reqjsonplaceholder
     # ${resp}=                  get Request                 mysession                   /posts/1
     #${status_Code}             ${resp.json()}[status]      asd
     # ${resp}=                  GET                         ${jurl}                     #This one also working
@@ -17,7 +19,7 @@ Get Request Data
     # Create Session            mysession                   ${jurl}
     ${resp}=                    Get On Session              jsonplaceholder             /posts/1
     # Should Be Equal As Strings                            ${resp.json()}.[status]     ok
-    Dictionary Should Contain Value                        ${resp.json()}               sunt aut facere repellat provident
+    Dictionary Should Contain Value                         ${resp.json()}              sunt aut facere repellat provident
     Log                         ${resp}
     Log                         ${resp.json()}.title
     Log                         ${resp.json()}[title]
@@ -35,4 +37,4 @@ Get Google Request Data
     ${resp_google}=             Get On Session              google                      /                           expected_status=200
     Log                         ${resp_google}
     Should Be Equal As Strings                              ${resp_google.reason}       OK
-    #Should Be Equal As Integers                             ${resp_google.status}       200
+    #Should Be Equal As Integers                            ${resp_google.status}       200
