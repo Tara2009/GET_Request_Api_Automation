@@ -17,9 +17,12 @@ Get Request Data
     # Create Session            mysession                   ${jurl}
     ${resp}=                    Get On Session              jsonplaceholder             /posts/1
     # Should Be Equal As Strings                            ${resp.json()}.[status]     ok
+    Dictionary Should Contain Value                        ${resp.json()}               sunt aut facere repellat provident
     Log                         ${resp}
     Log                         ${resp.json()}.title
     Log                         ${resp.json()}[title]
+    Log                         ${resp.json()}.body
+    Log                         ${resp.json()}[body]
     Log                         ${resp}.reason
     Log                         ${resp}.content
     Log                         ${resp}.headers
