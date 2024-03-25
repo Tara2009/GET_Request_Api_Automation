@@ -13,4 +13,7 @@ Get Request Data
    # ${resp}=            get Request    mysession    /posts/1
    ${resp}=             GET   ${jurl}   
    Log                  ${resp}     
-   Log                  ${resp}.status             
+   Log                  ${resp}.status    
+   Log                  ${resp}.reason
+   Log                  ${resp}.content
+   Log                  ${resp}.headers         
