@@ -46,3 +46,11 @@ Post Request
     ${postresp}=                Post On Session             jsonplaceholder             /posts                      json=${data}           expected_status=anything
     Status Should Be            201                         ${postresp}
     Dictionary Should Contain Key                           ${postresp.json()}          id
+
+Put Request
+    [Documentation]             Put Request from the Placeholder web Suite
+    [Tags]                      PostReq
+    &{data}=                    Create Dictionary           title=update the request through copado
+    ${putresp}=                 Put On Session              jsonplaceholder             /posts                      json=${data}           expected_status=anything
+    Status Should Be            201                         ${putresp}
+    Dictionaries Should Be Equal                            ${putresp.json()}[id]       100
