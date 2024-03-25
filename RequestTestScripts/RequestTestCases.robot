@@ -49,7 +49,7 @@ Post Request
 
 Put Request
     [Documentation]             Put Request from the Placeholder web Suite
-    [Tags]                      PostReq
+    [Tags]                      putReq
     &{data}=                    Create Dictionary           title=update the request through copado
     ${putresp}=                 Put On Session              jsonplaceholder             /posts                      json=${data}           expected_status=anything
     Status Should Be            201                         ${putresp}
