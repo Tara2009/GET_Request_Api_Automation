@@ -12,4 +12,5 @@ Get Request Data
     ${CSession}=        Create Session      mysession    ${jurl}
    # ${resp}=            get Request    mysession    /posts/1
    ${resp}=             GET   ${jurl}   
-   Log                  ${resp}                  
+   Log                  ${resp}     
+   Log                  ${resp}.status             
