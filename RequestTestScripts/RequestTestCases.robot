@@ -12,8 +12,10 @@ Get Request Data
     ${CSession}=        Create Session      mysession    ${jurl}
    # ${resp}=            get Request    mysession    /posts/1
    ${resp}=             GET   ${jurl}   
+   #${status_Code}       ${resp.json()}[status]     asd
    Log                  ${resp}     
-   Log                  ${resp}.status    
+   Log                  ${resp.json()}[status]    
    Log                  ${resp}.reason
    Log                  ${resp}.content
    Log                  ${resp}.headers         
+   #${response.json()}[id]
