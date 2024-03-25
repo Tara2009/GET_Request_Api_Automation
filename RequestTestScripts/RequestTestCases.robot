@@ -19,7 +19,7 @@ Get Request Data
     # Create Session            mysession                   ${jurl}
     ${resp}=                    Get On Session              jsonplaceholder             /posts/1
     # Should Be Equal As Strings                            ${resp.json()}.[status]     ok
-    #Dictionary Should Contain Value                         ${resp.json()}[title]              sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+    Should Contain              ${resp.json()}              sunt aut facere repellat provident occaecati excepturi optio reprehenderit
     Log                         ${resp}
     Log                         ${resp.json()}.title
     Log                         ${resp.json()}[title]
