@@ -52,9 +52,9 @@ Put Request
     [Documentation]             Put Request from the Placeholder web Suite
     [Tags]                      putReq
     &{data}=                    Create Dictionary           title=update the request through copado
-    ${putresp}=                 Put On Session              jsonplaceholder             /posts+/3                    json=${data}           expected_status=200
-    Log                        ${putresp}
-    #Status Should Be            201                         ${putresp}
-    Dictionary Should Contain Key                         ${putresp.json()}             title
-    ${titleval}=                        Get From Dictionary                        ${putresp.json()}                 title
-    Should Be Equal As Strings          ${updated_expected}                        ${titleval}
+    ${putresp}=                 Put On Session              jsonplaceholder             /posts/100                  json=${data}           expected_status=200
+    Log                         ${putresp}
+    #Status Should Be           201                         ${putresp}
+    Dictionary Should Contain Key                           ${putresp.json()}           title
+    ${titleval}=                Get From Dictionary         ${putresp.json()}           title
+    Should Be Equal As Strings                              ${updated_expected}         ${titleval}
