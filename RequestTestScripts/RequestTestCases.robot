@@ -15,7 +15,7 @@ Get Request Data
    ${resp}=             GET   ${jurl}   
    #${status_Code}       ${resp.json()}[status]     asd
    Log                  ${resp}     
-   Log                  ${resp.json()}.status    
+   Log                  ${resp.json()}.title    
    Log                  ${resp}.reason
    Log                  ${resp}.content
    Log                  ${resp}.headers         
